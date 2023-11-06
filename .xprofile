@@ -29,6 +29,4 @@ if [ "$XDG_SESSION_DESKTOP" = "spectrwm" ]; then
 
     pkill trayer;
     trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 4 --transparent true --alpha 0 --tint 0x11111b --height 15 &
-
-
 fi
