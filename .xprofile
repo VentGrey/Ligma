@@ -1,0 +1,34 @@
+#!/bin/sh
+
+if [ "$XDG_SESSION_DESKTOP" = "spectrwm" ]; then
+    SCRIPTPATH="$HOME/.config/spectrwm"
+
+    pgrep -x "picom" && pkill picom
+    nohup picom --config "$SCRIPTPATH"/picom/picom.conf > /dev/null 2>&1 &
+
+    pgrep -x "nitrogen" && pkill nitrogen
+    nohup nitrogen --restore &
+
+    nohup dunst -config "$SCRIPTPATH/dunstrc" &
+
+    # Start custom power management notifications
+    pgrep -x "battery-notify" && pkill battery-notify
+    nohup "$SCRIPTPATH"/battery-notify >/dev/null 2>&1 &
+
+    # ==== [ SCREEN CONFIGURATIONS ] ====
+    xset s 120 5
+    xss-lock -l -- i3lock-fancy -p
+
+    xdg-user-dirs-update &
+    xdg-user-dirs-gtk-update &
+    /usr/libexec/polkit-mate-authentication-agent-1 &
+    /usr/libexec/deja-dup/deja-dup-monitor &
+    /usr/libexec/at-spi-bus-launcher --launch-immediately &
+    blueman-applet &
+    /usr/bin/emacs --daemon --user "$(whoami)" &
+
+    pkill trayer;
+    trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 4 --transparent true --alpha 0 --tint 0x11111b --height 15 &
+
+
+fi
