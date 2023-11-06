@@ -1,0 +1,12 @@
+lemonbar/battery
+lemonbar/ram_usage
+lemonbar/time
+lemonbar/cpu_usage
+lemonbar/wmdesk
+lemonbar/wmtitle
+lemonbar/getvol
+lemonbar/get_ssid
+lemonbar/.ccls-cache/
+battery-notify
+*.bak
+*.tdy
