@@ -15,9 +15,6 @@ if [ "$XDG_SESSION_DESKTOP" = "spectrwm" ]; then
     pgrep -x "battery-notify" && pkill battery-notify
     nohup "$SCRIPTPATH"/battery-notify >/dev/null 2>&1 &
 
-    # ==== [ SCREEN CONFIGURATIONS ] ====
-    xset s 120 5
-    xss-lock -l -- i3lock-fancy -p
 
     xdg-user-dirs-update &
     xdg-user-dirs-gtk-update &
@@ -29,4 +26,9 @@ if [ "$XDG_SESSION_DESKTOP" = "spectrwm" ]; then
 
     pkill trayer;
     trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 4 --transparent true --alpha 0 --tint 0x11111b --height 15 &
+
+    
+    # ==== [ SCREEN CONFIGURATIONS ] ====
+    xset s 120 5
+    xss-lock -l -- i3lock-fancy -p
 fi

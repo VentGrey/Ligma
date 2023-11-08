@@ -40,13 +40,13 @@ sub listen_volume {
     my ($mute, $volume) = split /\s+/, `pamixer --get-volume --get-mute`;
 
         if ($mute eq 'true') {
-            return "+\@fg=8;󰖁 Muted+\@fg=0;";
+            return "󰖁 Muted";
         } elsif ($volume == 0) {
-            return "+\@fg=8;󰕿 0+\@fg=0;";
+            return "󰕿 0";
         } elsif ($volume < 50) {
-            return "+\@fg=6;󰖀 $volume+\@fg=0;";
+            return "󰖀 $volume";
         } else {
-            return "+\@fg=5;󰕾 $volume+\@fg=0;";
+            return "󰕾 $volume";
         }
     };
 
@@ -59,8 +59,7 @@ sub listen_volume {
         on_read => sub {
             $handle->push_read(line => sub {
                 my $current_output = $_[1];
-                if (($current_output =~ /sink/ || $current_output =~ /change/ || $current_output =~ /cambiar/)
-                    && (!defined $last_output || $current_output ne $last_output)) {
+                if ($current_output =~ /(sink|change|cambiar)/ && (!defined $last_output || $current_output ne $last_output)) {
                     $callback->($update_volume->());
                     $last_output = $current_output;
                 }
