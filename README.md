@@ -11,6 +11,9 @@ Provided wallpapers are the same as included in [Epitaph](https://github.com/Ven
 
 ## Screenshots
 
+![Screenshot_2023-11-08](https://github.com/VentGrey/Ligma/assets/24773698/595d66fc-9fe2-4a12-a325-afd7639ee522)
+
+
 ## Requirements
 
 This rice is a lesser version of Epitaph, reduced to be as simple as spectrwm allows me to be.
