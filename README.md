@@ -38,7 +38,7 @@ To run this you'll need:
 
 ## The `ligma.pl` bar script.
 
-Using elements from *ponjo*, *crototoco*, *padalusto*, *timulo* and *crotolamo*, this script is a reduced version of `genesis` in Epitaph, it essentially outputs less modules, ideal for window managers that provide a bar with their own modules + script output.
+Using elements from *ponjo*, *crototoco*, *padalustro*, *timulo* and *crotolamo*, this script is a reduced version of `genesis` in Epitaph, it essentially outputs less modules, ideal for window managers that provide a bar with their own modules + script output.
 
 All format characters can be found in this source code with the following notation: `+@fg=n;` where `n` is any number from 0 to 9.
 
