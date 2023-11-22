@@ -24,11 +24,7 @@ if [ "$XDG_SESSION_DESKTOP" = "spectrwm" ]; then
     blueman-applet &
     /usr/bin/emacs --daemon --user "$(whoami)" &
 
-    pkill trayer;
-    trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 4 --transparent true --alpha 0 --tint 0x11111b --height 15 &
-
-    
     # ==== [ SCREEN CONFIGURATIONS ] ====
     xset s 120 5
-    xss-lock -l -- i3lock-fancy -p
+    xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 fi
